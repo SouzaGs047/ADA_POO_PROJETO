@@ -8,7 +8,14 @@ public abstract class Pessoas {
         return nome;
     }
 
+    public Pessoas(String nome) {
+        this.nome = nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public abstract void trabalhar();
+
 }
