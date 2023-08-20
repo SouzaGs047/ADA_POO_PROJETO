@@ -1,8 +1,12 @@
-public class Diretores{
+package classes;
+
+public class Ator {
+    
     private String nome;
-    public Diretores() {
+    
+    public Ator() {
     }
-    public Diretores(String nome) {
+    public Ator(String nome) {
         this.nome = nome;
     }
 
@@ -13,8 +17,8 @@ public class Diretores{
         this.nome = nome;
     }
 
-    @Override
     public String toString() {
-        return nome;
+        return  nome;
     }
+
 }
