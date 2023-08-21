@@ -15,6 +15,10 @@ public class Diretor{
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public void exibeNomeDiretor(){
+        System.out.println("Nome: " + nome);
+    }
     @Override
     public String toString() {
         return nome;

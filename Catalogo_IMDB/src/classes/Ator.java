@@ -1,7 +1,6 @@
 package classes;
 
 public class Ator {
-    
     private String nome;
     
     public Ator() {
@@ -15,6 +14,10 @@ public class Ator {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public void exibeNomeAtor() {
+        System.out.println("Nome: " + nome);
     }
 
     public String toString() {

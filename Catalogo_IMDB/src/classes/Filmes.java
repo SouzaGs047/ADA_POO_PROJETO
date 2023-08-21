@@ -8,19 +8,23 @@ public class Filmes {
     private int anoDeLancamento;
     private String sinopse;
     private double orcamento;
-    private Diretor diretor;
-    private List<Ator> atores;
+    private List<Diretor> diretoresDoFilme;
+    private List<Ator> atoresDoFilme;
 
 
     public Filmes() {
+        this.diretoresDoFilme = new ArrayList<>();
+        this.atoresDoFilme = new ArrayList<>();
     }
 
-    public Filmes(String nome, int anoDeLancamento, String sinopse, double orcamento) {
+    public Filmes(String nome, int anoDeLancamento, String sinopse, double orcamento,ArrayList<Diretor> diretores,ArrayList<Ator> atores) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
         this.sinopse = sinopse;
         this.orcamento = orcamento;
-        this.atores = new ArrayList<>();
+        this.diretoresDoFilme = diretores;
+        this.atoresDoFilme = atores;
+
     }
 
 
@@ -56,20 +60,21 @@ public class Filmes {
         this.orcamento = orcamento;
     }
 
-    public Diretor getDiretor() {
-        return diretor;
-    }
-
-    public void setDiretor(Diretor diretor) {
-        this.diretor = diretor;
-    }
 
 
-    public void setAtor(Ator ator) {
-        atores.add(ator);
+    public void setAtor(ArrayList<Ator> atores) {
+        atoresDoFilme.addAll(atores);
     }
     public List<Ator> getAtores() {
-        return atores;
+        return atoresDoFilme;
+    }
+
+
+    public void setDiretor(ArrayList<Diretor> diretores) {
+        diretoresDoFilme.addAll(diretores);
+    }
+    public List<Diretor> getDiretores() {
+        return diretoresDoFilme;
     }
 
     @Override
@@ -78,8 +83,8 @@ public class Filmes {
                 ", anoDeLancamento= " + anoDeLancamento +
                 ", sinopse= " + sinopse +
                 ", orcamento= " + orcamento +
-                ", diretor= " + diretor +
-                ", atores= " + atores
+                ", diretor= " + diretoresDoFilme +
+                ", atores= " + atoresDoFilme
                 ;
     }
 }
