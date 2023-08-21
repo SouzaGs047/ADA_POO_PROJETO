@@ -12,21 +12,21 @@ import metodos.EncontrarAtor;
 import metodos.EncontrarDiretor;
 import metodos.SelecionarAtores;
 import metodos.SelecionarDiretores;
-import catalogo.CadastrarFilme;
 
 public class Menu {
     public void exibirMenu(){
         System.out.print("""
-                                    ***IMDB***
+                                    \n***IMDB***
                          
                             1. Adicionar Diretor
                             2. Adicionar Ator
                             3. Lista de Atores e Diretores
                             
                             4. Adicionar Filme
-                            5. Pesquisar Filme
+                            5. Catalogo de Filmes
+                            6. Pesquisar Filme
                             
-                            6. Sair
+                            7. Sair
                          
                            Escolha uma opcao: 
                            """);
@@ -40,6 +40,7 @@ public class Menu {
         switch (opcaoMenu) {
             case 1 -> {
                 limpar();
+                System.out.print("***CADASTRAR DIRETOR***\n");
                 EncontrarDiretor encontrarDiretores = new EncontrarDiretor();
                 System.out.print("Digite o nome do Diretor: ");
                 String nomeDiretor = input.next();
@@ -49,6 +50,7 @@ public class Menu {
 
             case 2 -> {
                 limpar();
+                System.out.print("***CADASTRAR ATOR***\n");
                 EncontrarAtor metodosAtor = new EncontrarAtor();
                 System.out.print("Digite o nome do Ator: ");
                 String nomeAtor = input.next();
@@ -57,6 +59,8 @@ public class Menu {
             }
 
             case 3 -> {
+                limpar();
+                System.out.print("***CATALOGO DE ELENCO***\n");
                 EncontrarDiretor encontrarDiretores = new EncontrarDiretor();
                 System.out.println("Diretores: ");
                 encontrarDiretores.getDiretores();
@@ -71,8 +75,10 @@ public class Menu {
             }
 
             case 4 -> {
+                limpar();
                 CadastrarFilme cadastrarFilme = new CadastrarFilme();
 
+                System.out.print("***CADASTRO DE FILME***\n");
                 System.out.print("Digite o nome do Filme: ");
                 String nome = input.next();
                 System.out.print("Digite o Ano de Lançamento: ");
@@ -91,9 +97,18 @@ public class Menu {
                 cadastrarFilme.adicionarFilme(nome, ano, sinopse, orcamento, diretoresSelecionados, atoresSelecionados);
             }
 
-
             case 5 -> {
+                limpar();
+                System.out.print("***CATALOGO DE FILMES***\n");
                 CatalogoDeFilmes catalogoDeFilmes = new CatalogoDeFilmes();
+                System.out.println("Filmes: ");
+                catalogoDeFilmes.MostrarCatalogoDeFilmes();
+                System.out.println();
+            }
+            case 6 -> {
+                limpar();
+                CatalogoDeFilmes catalogoDeFilmes = new CatalogoDeFilmes();
+                System.out.println("***PESQUISA DE FILME***\n");
                 System.out.print("Digite o nome do Filme para pesquisar: ");
                 String nomeDoFilme = input.next();
 
@@ -102,7 +117,8 @@ public class Menu {
 
             }
 
-            case 6 -> {
+            case 7 -> {
+                limpar();
                 System.out.println("Saindo...");
                 input.close();
                 System.exit(0);
