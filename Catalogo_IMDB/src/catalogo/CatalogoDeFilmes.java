@@ -16,6 +16,7 @@ public class CatalogoDeFilmes{
             System.out.println("Orçamento: "+ filme.getOrcamento());
             System.out.println("Diretor: " + filme.getDiretores());
             System.out.println("Atores: " + filme.getAtores());
+            System.out.println();
         }
     }
 
